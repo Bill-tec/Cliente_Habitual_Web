@@ -14,19 +14,19 @@
 <title>Cliente Habitual Web</title>
 </head>
 <body>
-	<h1>Comercios cadastrados</h1>
-	<h3>
-		<a href="/cadastrarCliente" class="waves-effect waves-light btn"><i
-			class="material-icons left">add_circle_outline</i>Cadastro de Clientes</a>
-	</h3>
-	<table class="container">
-		<thead>
-			<th>Nome</th>
-		</thead>
-		<tr th:each="evento : ${evento}">
-			<td><span th:text="${evento.nome}"></span></td>
-		</tr>
-	</table>
+	<h1>Cadastro de Cliente:</h1>
+	<form class="container" method="post">
+		Nome: <input type="text" name="nome">
+		<div class="row">
+			<div class="input-field col s6">
+				Login: <input type="text" name="login">
+			</div>
+			<div class="input-field col s3">
+				Senha: <input type="password" name="senha">
+			</div>
+		</div>
+		<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+	</form>
 
 	<!--JavaScript at end of body for optimized loading-->
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
