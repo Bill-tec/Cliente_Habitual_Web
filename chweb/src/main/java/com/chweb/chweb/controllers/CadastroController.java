@@ -16,22 +16,36 @@ public class CadastroController {
 	@Autowired
 	private ClienteRepository clienteR;
 	@RequestMapping(value = "/cadastrarCliente", method=RequestMethod.GET)
-	public String form() {
+	public String formCliente() {
 		return "cadastro/cadastroCliente";
 	}
 	
 	@RequestMapping(value = "/cadastrarCliente",method=RequestMethod.POST)
-	public String form(Cliente cliente) {
+	public String formSaveCliente(Cliente cliente) {
 		clienteR.save(cliente);
 		return "redirect:/";
 	}
 	
+	/* Comercio */
 	@Autowired
 	private ComercioRepository comercioR;
-	@RequestMapping("/cadastrarComercio")
-	public String form(Comercio comercio) {
+	
+	@RequestMapping(value = "/cadastrarComercio", method=RequestMethod.GET)
+	public String formComercio() {
+		return "cadastro/cadastroComercio";
+	}
+	@RequestMapping(value = "/cadastrarComercio", method=RequestMethod.POST)
+	public String formSaveComercio(Comercio comercio) {
 		comercioR.save(comercio);
 		return "redirect:/";
+	}
+	
+	@RequestMapping("/comercios")
+	public ModelAndView listaComercios() {
+		ModelAndView mv = new ModelAndView("index");
+		Iterable<Comercio> comercios = comercioR.findAll();
+		mv.addObject("comercio", comercios);
+		return mv;
 	}
 
 }

@@ -15,16 +15,22 @@
 </head>
 <body>
 	<h1>Comercios cadastrados</h1>
-	<h3>
-		<a href="/cadastrarCliente" class="waves-effect waves-light btn"><i
+	<table>
+		<td>
+			<a href="/cadastrarCliente" class="waves-effect waves-light btn"><i
 			class="material-icons left">add_circle_outline</i>Cadastro de Clientes</a>
-	</h3>
+		</td>
+		<td>
+			<a href="/cadastrarComercio" class="waves-effect waves-light btn"><i
+			class="material-icons left">add_circle_outline</i>Cadastro de Comercio</a>
+		</td>
+	</table>
 	<table class="container">
 		<thead>
 			<th>Nome</th>
 		</thead>
-		<tr th:each="evento : ${evento}">
-			<td><span th:text="${evento.nome}"></span></td>
+		<tr th:each="comercio : ${comercio}">
+			<td><span th:text="${comercio.nome}"></span></td>
 		</tr>
 	</table>
 
