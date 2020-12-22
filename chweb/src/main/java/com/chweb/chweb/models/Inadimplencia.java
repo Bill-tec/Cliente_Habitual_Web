@@ -6,15 +6,15 @@ public class Inadimplencia {
 	private int id;
 	private Calendar data;
 	private Float valor;
-	private int idCliente;
-	private int idComercio;
+	private Cliente cliente;
+	private Comercio comercio;
 	
-	public Inadimplencia(int id, Calendar data, Float valor, int idCliente, int idComercio) {
+	public Inadimplencia(int id, Calendar data, Float valor, Cliente cliente, Comercio comercio) {
 		this.id = id;
-		this.idCliente = idCliente;
+		this.cliente = cliente;
 		this.valor = valor;
 		this.data = data;
-		this.idComercio = idComercio;
+		this.comercio = comercio;
 	}
 
 	public int getId() {
@@ -41,28 +41,22 @@ public class Inadimplencia {
 		this.valor = valor;
 	}
 
-	public int getCliente() {
-		return idCliente;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setClienteId(int idCliente) {
-		this.idCliente = idCliente;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
-	public int getIdCliente() {
-		return idCliente;
+	public Comercio getComercio() {
+		return comercio;
 	}
 
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
+	public void setComercio(Comercio comercio) {
+		this.comercio = comercio;
 	}
 
-	public int getIdComercio() {
-		return idComercio;
-	}
-
-	public void setIdComercio(int idComercio) {
-		this.idComercio = idComercio;
-	}
+	
 	
 }

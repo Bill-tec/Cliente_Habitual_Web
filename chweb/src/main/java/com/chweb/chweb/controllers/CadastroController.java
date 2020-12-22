@@ -37,15 +37,6 @@ public class CadastroController {
 	@RequestMapping(value = "/cadastrarComercio", method=RequestMethod.POST)
 	public String formSaveComercio(Comercio comercio) {
 		comercioR.save(comercio);
-		return "redirect:/";
+		return "/";
 	}
-	
-	@RequestMapping("/comercios")
-	public ModelAndView listaComercios() {
-		ModelAndView mv = new ModelAndView("index");
-		Iterable<Comercio> comercios = comercioR.findAll();
-		mv.addObject("comercio", comercios);
-		return mv;
-	}
-
 }
