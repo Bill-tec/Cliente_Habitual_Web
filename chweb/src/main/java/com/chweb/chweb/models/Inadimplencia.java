@@ -1,12 +1,26 @@
 package com.chweb.chweb.models;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
-public class Inadimplencia {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Inadimplencia implements Serializable{
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private Calendar data;
 	private Float valor;
+	
+	@ManyToOne
 	private Cliente cliente;
+
+	@ManyToOne
 	private Comercio comercio;
 	
 	public Inadimplencia(int id, Calendar data, Float valor, Cliente cliente, Comercio comercio) {
